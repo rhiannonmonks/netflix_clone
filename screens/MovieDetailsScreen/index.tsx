@@ -80,18 +80,18 @@ const MovieDetailsScreen = () => {
                             </View>
                         </View>
 
-                        <Picker
-                            selectedValue={currentSeason.name}
-                            onValueChange={(itemValue, itemIndex) => {
-                                setCurrentSeason(movie.seasons.items[itemIndex])
-                            }}
-                            style={{color: 'white', width: 130 }}
-                            dropdownIconColor={'white'}
-                        >
-                            {seasonNames.map(seasonName => (
-                                <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
-                            ))}
-                        </Picker>
+                            <Picker
+                                selectedValue={currentSeason.name}
+                                onValueChange={(itemValue, itemIndex) => {
+                                    setCurrentSeason(movie.seasons.items[itemIndex])
+                                }}
+                                itemStyle={{color: 'white', width: 130 }}
+                                dropdownIconColor={'#ffff'}
+                            >
+                                {seasonNames.map(seasonName => (
+                                    <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
+                                ))}
+                            </Picker>
                     </View>
                 )}
             />
