@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authnetflixclone74636b8f_userpool_74636b8f"
+              "userPoolId": "authnetflixclone74636b8f"
             }
           },
           "additionalAuthenticationProviders": [
@@ -26,6 +26,12 @@
           ]
         }
       }
+    }
+  },
+  "storage": {
+    "netflixmedia": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
     }
   }
 }
