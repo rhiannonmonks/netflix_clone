@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "netflixclone",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authnetflixclone74636b8f",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
