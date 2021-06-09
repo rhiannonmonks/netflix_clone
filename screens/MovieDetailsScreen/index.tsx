@@ -118,17 +118,17 @@ const MovieDetailsScreen = () => {
                         {/* Row with icon buttons */}
                         <View style={{flexDirection: 'row', marginTop: 20,}}>
                             <View style={{alignItems: 'center', marginHorizontal: 20}}>
-                                <AntDesign name="plus" size={24} color={'white'} />
+                                <AntDesign name="plus" size={24} color={'black'} />
                                 <Text style={{color: 'darkgrey', marginTop: 5}}>My List</Text>
                             </View>
 
                             <View style={{alignItems: 'center', marginHorizontal: 20}}>
-                                <Feather name="thumbs-up" size={24} color="white" />
+                                <Feather name="thumbs-up" size={24} color="black" />
                                 <Text style={{color: 'darkgrey', marginTop: 5}}>Rate</Text>
                             </View>
 
                             <View style={{alignItems: 'center', marginHorizontal: 20}}>
-                                <FontAwesome name="send-o" size={24} color="white" />
+                                <FontAwesome name="send-o" size={24} color="black" />
                                 <Text style={{color: 'darkgrey', marginTop: 5 }}>Share</Text>
                             </View>
                         </View>
@@ -143,9 +143,9 @@ const MovieDetailsScreen = () => {
                                 onValueChange={(itemValue, itemIndex) => {
                                     setCurrentSeason(seasons[itemIndex])
                                 }}
-                                style={{color: 'white', width: 130 }}
+                                style={{color: 'black', width: 130 }}
                                 itemStyle={{backgroundColor: 'white'}}
-                                dropdownIconColor={'white'}
+                                dropdownIconColor={'black'}
                             >
                                 {seasonNames.map(seasonName => (
                                     <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
