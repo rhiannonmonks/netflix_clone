@@ -10,7 +10,12 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import config from './src/aws-exports'
 
-Amplify.configure(config)
+Amplify.configure({
+  ...config,
+  Analytics: {
+    disabled: true,
+  },
+});
 
 function App() {
   const isLoadingComplete = useCachedResources();
