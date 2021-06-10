@@ -35,4 +35,4 @@ type Episode @model @key(name: "bySeason", fields: ["seasonID"]) @auth(rules: [{
   seasonID: ID!
   season: Season @connection(fields: ["seasonID"])
 }
-  
+   

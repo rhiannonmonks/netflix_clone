@@ -18,4 +18,6 @@ target 'netflixclone' do
   #     flipper_post_install(installer)
   #   end
   # end
+  pod 'RNPurchases', :path => '../node_modules/react-native-purchases'
+
 end

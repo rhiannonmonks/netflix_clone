@@ -56,6 +56,11 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - Purchases (3.11.1):
+    - PurchasesCoreSwift (= 3.11.1)
+  - PurchasesCoreSwift (3.11.1)
+  - PurchasesHybridCommon (1.7.1):
+    - Purchases (= 3.11.1)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -286,6 +291,8 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
+  - RNAWSCognito (5.0.2):
+    - React-Core
   - RNCAsyncStorage (1.15.5):
     - React-Core
   - RNCMaskedView (0.1.10):
@@ -293,6 +300,9 @@ PODS:
   - RNCPicker (1.9.11):
     - React-Core
   - RNGestureHandler (1.10.3):
+    - React-Core
+  - RNPurchases (4.1.3):
+    - PurchasesHybridCommon (= 1.7.1)
     - React-Core
   - RNReanimated (2.1.0):
     - DoubleConversion
@@ -392,10 +402,12 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNAWSCognito (from `../node_modules/amazon-cognito-identity-js`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPurchases (from `../node_modules/react-native-purchases`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - UMAppLoader (from `../node_modules/unimodules-app-loader/ios`)
@@ -416,6 +428,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Purchases
+    - PurchasesCoreSwift
+    - PurchasesHybridCommon
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -498,6 +513,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNAWSCognito:
+    :path: "../node_modules/amazon-cognito-identity-js"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCMaskedView:
@@ -506,6 +523,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-picker/picker"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNPurchases:
+    :path: "../node_modules/react-native-purchases"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -559,6 +578,9 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: f2c97f2529dd79c083355182cc158c9f98f4bd6e
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  Purchases: 6351f9ff6bd514e5ec5aa0f989ea181effa94bf5
+  PurchasesCoreSwift: ee857e4c21e6254b09d7e303a756fcf2b9164408
+  PurchasesHybridCommon: e3b25475328b58169e811135a3476ed0e5a4243a
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -581,10 +603,12 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
+  RNAWSCognito: e84a819f4baf0701e2b6ab65f34ae6f04283c1c6
   RNCAsyncStorage: 56a3355a10b5d660c48c6e37325ac85ebfd09885
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 6780c753e9e674065db90d9c965920516402579d
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNPurchases: 872ab12151c30dbf8e9f691cca883e9166f716d0
   RNReanimated: 70f662b5232dd5d19ccff581e919a54ea73df51c
   RNScreens: e8e8dd0588b5da0ab57dcca76ab9b2d8987757e0
   UMAppLoader: fe2708bb0ac5cd70052bc207d06aa3b7e72b9e97
