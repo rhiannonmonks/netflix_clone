@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Amplify from 'aws-amplify'
+import Amplify, { Auth } from 'aws-amplify'
 import { withAuthenticator } from 'aws-amplify-react-native';
 import Purchases from 'react-native-purchases';
 
@@ -20,16 +20,26 @@ Amplify.configure({
 });
 
 function App() {
-  // const [purchasesSetup, setPurchasesSetup] = useState(false);
+  const [purchasesSetup, setPurchasesSetup] = useState(false);
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
-  // useEffect(() => {
-  //   Purchases.setDebugLogsEnabled(true);
-  //   Purchases.setup(API_KEY);
-  // }, [])
+  useEffect(() => {
+    const setupRC = async () => {
+      // get user ID
+      const userInfo = await Auth.currentAuthenticatedUser();
+      if (!userInfo) { return; }
 
-  if (!isLoadingComplete) {
+      const userID = userInfo.attributes.sub;
+      
+      Purchases.setDebugLogsEnabled(true);
+      await Purchases.setup(API_KEY, userID);
+      setPurchasesSetup(true);
+    };
+    setupRC();
+  }, [])
+
+  if (!isLoadingComplete || !purchasesSetup) {
     return null;
   } else {
     return (

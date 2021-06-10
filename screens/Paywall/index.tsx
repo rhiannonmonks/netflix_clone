@@ -1,16 +1,19 @@
 import React, { useEffect, useState} from 'react';
 import { View, Text } from '../../components/Themed';
-import Purchases from 'react-native-purchases';
+import Purchases, { PurchasesPackage } from 'react-native-purchases';
+import { FlatList } from 'react-native';
+import PackageItem from '../../components/PackageItem';
 
 const Paywall = () => {
-    const [packages, setPackages] = useState([]);
+    const [packages, setPackages] = useState<PurchasesPackage[]>([]);
 
     useEffect(() => {
         const fetchOfferings = async () => {
         try {
             const offerings = await Purchases.getOfferings();
+            console.log(offerings.current)
             if (offerings.current !== null) {
-                console.log(offerings.current)
+                setPackages(offerings.current.availablePackages);
             // Display current offering with offerings.current
             }
   
@@ -22,7 +25,10 @@ const Paywall = () => {
     
     return (
         <View>
-            <Text>Paywall</Text>
+            <FlatList
+            data={packages}
+            renderItem={({item}) => <PackageItem purchasePackage={item}/>}
+            />
         </View>
     )
 }
