@@ -4,9 +4,11 @@ import { Auth } from 'aws-amplify';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import Purchases from 'react-native-purchases';
 
 export default function TabTwoScreen() {
-  const onLogout = () => {
+  const onLogout = async () => {
+    await Purchases.reset();
     Auth.signOut();
   }
   return (
