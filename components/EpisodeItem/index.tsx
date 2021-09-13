@@ -16,7 +16,7 @@ import { Episode } from '../../types';
 
 interface EpisodeItemProps {
     episode: Episode;
-    onPress: (eppisode: Episode) => {}
+    onPress: (episode: Episode) => {}
 }
 
 const EpisodeItem = (props: EpisodeItemProps) => {
